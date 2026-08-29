@@ -12,9 +12,6 @@ workflows:
         BUNDLE_ID: "com.mif.infernale.iphone"
         XCODE_PROJECT: "MercanteInfernale.xcodeproj"
         XCODE_SCHEME: "MercanteInfernale"
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: $BUNDLE_ID
 
     scripts:
       - name: Verify project
@@ -28,9 +25,23 @@ workflows:
         script: |
           /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $CM_BUILD_NUMBER" "$CM_BUILD_DIR/MercanteInfernale/Info.plist"
 
+      - name: Initialize keychain
+        script: |
+          keychain initialize
+
+      - name: Fetch App Store signing files
+        script: |
+          app-store-connect fetch-signing-files "$BUNDLE_ID" \
+            --type IOS_APP_STORE \
+            --create
+
+      - name: Add signing certificate
+        script: |
+          keychain add-certificates
+
       - name: Set up code signing
         script: |
-          xcode-project use-profiles
+          xcode-project use-profiles --project "$CM_BUILD_DIR/$XCODE_PROJECT"
 
       - name: Build IPA
         script: |
