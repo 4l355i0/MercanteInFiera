@@ -1,0 +1,67 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+/* Begin PBXBuildFile section */
+		D2D2DF2E672C4887824833B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AA3CCA1B884E58B9EBBFBA /* Assets.xcassets */; };
+		E0A8F4A10CF143D8997C7780 /* MercanteInfernaleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78139940A7C84F9F87B5CE7C /* MercanteInfernaleApp.swift */; };
+		61E180B0C83B411E8F336AAC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464DE0C61F6E450C97E346FF /* Models.swift */; };
+		5A3F96A530C94233ABE4EB3C /* MultipeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307779BDFCF94BA18DDE98A2 /* MultipeerService.swift */; };
+		B837B3BBDABA463391097DAB /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C6A2303924E3C80DA2CE1 /* GameSession.swift */; };
+		F418B18095D34369ABB04236 /* CardViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAEFA02847F4BE19E9C0A7B /* CardViews.swift */; };
+		813991F066AF490F81BB1B4D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBF2DA75DA7469B8999D09B /* RootView.swift */; };
+		10E18F54FD2F4CC684B5F3DA /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BFE1B5DD674615B184C9F6 /* LobbyView.swift */; };
+		DA21BA095A834305825029BB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50E966F5F9F4956971D55C9 /* GameView.swift */; };
+		97B547917CC7482898D784B5 /* EliminationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203FFC2BE954CBA840F8ED8 /* EliminationView.swift */; };
+		1E7C8307F489447E81BDA26F /* WinnersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875195D776C943FFB56B3538 /* WinnersView.swift */; };
+/* End PBXBuildFile section */
+/* Begin PBXFileReference section */
+		1C45B935FEC441C885C408D7 /* MercanteInfernale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercanteInfernale.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26AA3CCA1B884E58B9EBBFBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24EF90025CFD4DB09EC03824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78139940A7C84F9F87B5CE7C /* MercanteInfernaleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercanteInfernaleApp.swift; sourceTree = "<group>"; };
+		464DE0C61F6E450C97E346FF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		307779BDFCF94BA18DDE98A2 /* MultipeerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerService.swift; sourceTree = "<group>"; };
+		CE1C6A2303924E3C80DA2CE1 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
+		7EAEFA02847F4BE19E9C0A7B /* CardViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViews.swift; sourceTree = "<group>"; };
+		AEBF2DA75DA7469B8999D09B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		95BFE1B5DD674615B184C9F6 /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
+		A50E966F5F9F4956971D55C9 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		6203FFC2BE954CBA840F8ED8 /* EliminationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminationView.swift; sourceTree = "<group>"; };
+		875195D776C943FFB56B3538 /* WinnersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnersView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+/* Begin PBXFrameworksBuildPhase section */
+		5F616903A86F41ACA9BB2053 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+/* Begin PBXGroup section */
+		21C1E349887E4EB9B5DBA111 = {isa = PBXGroup; children = (A31DC79B381D42B3BD446DE0 /* MercanteInfernale */, D0BF3008570F4514AF53381A /* Products */); sourceTree = "<group>"; };
+		A31DC79B381D42B3BD446DE0 /* MercanteInfernale */ = {isa = PBXGroup; children = (78139940A7C84F9F87B5CE7C /* MercanteInfernaleApp.swift */, 464DE0C61F6E450C97E346FF /* Models.swift */, 307779BDFCF94BA18DDE98A2 /* MultipeerService.swift */, CE1C6A2303924E3C80DA2CE1 /* GameSession.swift */, 7EAEFA02847F4BE19E9C0A7B /* CardViews.swift */, AEBF2DA75DA7469B8999D09B /* RootView.swift */, 95BFE1B5DD674615B184C9F6 /* LobbyView.swift */, A50E966F5F9F4956971D55C9 /* GameView.swift */, 6203FFC2BE954CBA840F8ED8 /* EliminationView.swift */, 875195D776C943FFB56B3538 /* WinnersView.swift */, 26AA3CCA1B884E58B9EBBFBA /* Assets.xcassets */, 24EF90025CFD4DB09EC03824 /* Info.plist */); path = MercanteInfernale; sourceTree = "<group>"; };
+		D0BF3008570F4514AF53381A /* Products */ = {isa = PBXGroup; children = (1C45B935FEC441C885C408D7 /* MercanteInfernale.app */); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+/* Begin PBXNativeTarget section */
+		DE980F8561874DBDA95FF9A7 /* MercanteInfernale */ = {isa = PBXNativeTarget; buildConfigurationList = 92A4F2BA286A468F86A6EE48; buildPhases = (1CD3BF0B7F73448F9A2CEEDE, 5F616903A86F41ACA9BB2053, 762BFA023B92421589406122); buildRules = (); dependencies = (); name = MercanteInfernale; productName = MercanteInfernale; productReference = 1C45B935FEC441C885C408D7; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+/* Begin PBXProject section */
+		9B0BC40AAC1E491BB11C6E79 /* Project object */ = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 1600; LastUpgradeCheck = 1600; TargetAttributes = {DE980F8561874DBDA95FF9A7 = {CreatedOnToolsVersion = 16.0; };};}; buildConfigurationList = 044095DBF5674057A585ABB8; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = 21C1E349887E4EB9B5DBA111; productRefGroup = D0BF3008570F4514AF53381A; projectDirPath = ""; projectRoot = ""; targets = (DE980F8561874DBDA95FF9A7); };
+/* End PBXProject section */
+/* Begin PBXResourcesBuildPhase section */
+		762BFA023B92421589406122 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (D2D2DF2E672C4887824833B8); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+/* Begin PBXSourcesBuildPhase section */
+		1CD3BF0B7F73448F9A2CEEDE = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (E0A8F4A10CF143D8997C7780, 61E180B0C83B411E8F336AAC, 5A3F96A530C94233ABE4EB3C, B837B3BBDABA463391097DAB, F418B18095D34369ABB04236, 813991F066AF490F81BB1B4D, 10E18F54FD2F4CC684B5F3DA, DA21BA095A834305825029BB, 97B547917CC7482898D784B5, 1E7C8307F489447E81BDA26F); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+/* Begin XCBuildConfiguration section */
+		85BCF79462E3404D9FCA4C5F = {isa = XCBuildConfiguration; buildSettings = {CLANG_ENABLE_MODULES = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; GCC_OPTIMIZATION_LEVEL = 0; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; }; name = Debug; };
+		DDA70ACC460F438881F68D59 = {isa = XCBuildConfiguration; buildSettings = {CLANG_ENABLE_MODULES = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; SWIFT_COMPILATION_MODE = wholemodule; }; name = Release; };
+		ADE4DC6EF34E418DA491F2D7 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = MercanteInfernale/Info.plist; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.mif.infernale.iphone; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_EMIT_LOC_STRINGS = YES; TARGETED_DEVICE_FAMILY = 1;}; name = Debug; };
+		EE7CFD388B5E405E98FC81DC = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = MercanteInfernale/Info.plist; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.mif.infernale.iphone; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_EMIT_LOC_STRINGS = YES; TARGETED_DEVICE_FAMILY = 1;}; name = Release; };
+/* End XCBuildConfiguration section */
+/* Begin XCConfigurationList section */
+		044095DBF5674057A585ABB8 = {isa = XCConfigurationList; buildConfigurations = (85BCF79462E3404D9FCA4C5F, DDA70ACC460F438881F68D59); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		92A4F2BA286A468F86A6EE48 = {isa = XCConfigurationList; buildConfigurations = (ADE4DC6EF34E418DA491F2D7, EE7CFD388B5E405E98FC81DC); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B0BC40AAC1E491BB11C6E79 /* Project object */;
+}

@@ -1,0 +1,50 @@
+workflows:
+  ios-testflight:
+    name: Mercante Infernale - TestFlight
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+
+    environment:
+      xcode: 16.4
+      groups:
+        - appstore_credentials
+      vars:
+        BUNDLE_ID: "com.mif.infernale.iphone"
+        XCODE_PROJECT: "MercanteInfernale.xcodeproj"
+        XCODE_SCHEME: "MercanteInfernale"
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: $BUNDLE_ID
+
+    scripts:
+      - name: Verify project
+        script: |
+          set -e
+          test -f "$CM_BUILD_DIR/$XCODE_PROJECT/project.pbxproj"
+          test -f "$CM_BUILD_DIR/codemagic.yaml"
+          xcodebuild -project "$CM_BUILD_DIR/$XCODE_PROJECT" -scheme "$XCODE_SCHEME" -showBuildSettings >/dev/null
+
+      - name: Set build number
+        script: |
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $CM_BUILD_NUMBER" "$CM_BUILD_DIR/MercanteInfernale/Info.plist"
+
+      - name: Set up code signing
+        script: |
+          xcode-project use-profiles
+
+      - name: Build IPA
+        script: |
+          xcode-project build-ipa \
+            --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+
+    publishing:
+      app_store_connect:
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
