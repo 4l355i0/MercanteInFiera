@@ -78,8 +78,22 @@ struct RoleSelectionView: View {
                 }
             }
 
+            Section("Test su un solo iPhone") {
+                Button("PROVA PARTITA SU QUESTO IPHONE") {
+                    session.startDemo(
+                        name: name.isEmpty ? "Mercante" : name,
+                        startingBalance: balance
+                    )
+                }
+                .buttonStyle(.borderedProminent)
+
+                Text("Crea automaticamente Giocatore 1 e Giocatore 2 e permette di provare asta, carte, crediti, eliminazione e vincitori senza altri iPhone.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+
             Section {
-                Text("3–8 partecipanti totali: 1 Mercante e da 2 a 7 giocatori.")
+                Text("Partita reale: 3–8 partecipanti totali, con 1 Mercante e da 2 a 7 giocatori.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
