@@ -382,12 +382,12 @@ struct GameView: View {
     }
 
     private func cardThumb(id: Int) -> some View {
-        CardTile(cardID: id)
-            .frame(width: 88, height: 132)
-    }
+    CardTile(id: id, eliminated: false)
+        .frame(width: 88, height: 132)
+}
 
-    private func cardLarge(id: Int) -> some View {
-        CardTile(cardID: id)
-            .frame(width: 180, height: 270)
-    }
+private func cardLarge(id: Int) -> some View {
+    CardTile(id: id, eliminated: false)
+        .frame(width: 180, height: 270)
+}
 }
