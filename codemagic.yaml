@@ -1,61 +1,33 @@
 workflows:
   ios-testflight:
-    name: Mercante Infernale - TestFlight
+    name: Mercante Infernale TestFlight
     instance_type: mac_mini_m2
-    max_build_duration: 60
+    max_build_duration: 30
+
+    integrations:
+      app_store_connect: CodeMagic
 
     environment:
-      xcode: 16.4
-      groups:
-        - appstore_credentials
-      vars:
-        BUNDLE_ID: "com.mif.infernale.iphone"
-        XCODE_PROJECT: "MercanteInfernale.xcodeproj"
-        XCODE_SCHEME: "MercanteInfernale"
+      xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.mif.infernale.iphone
 
     scripts:
-      - name: Verify project
-        script: |
-          set -e
-          test -f "$CM_BUILD_DIR/$XCODE_PROJECT/project.pbxproj"
-          test -f "$CM_BUILD_DIR/codemagic.yaml"
-          xcodebuild -project "$CM_BUILD_DIR/$XCODE_PROJECT" -scheme "$XCODE_SCHEME" -showBuildSettings >/dev/null
-
-      - name: Set build number
-        script: |
-          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $CM_BUILD_NUMBER" "$CM_BUILD_DIR/MercanteInfernale/Info.plist"
-
-      - name: Initialize keychain
-        script: |
-          keychain initialize
-
-      - name: Fetch App Store signing files
-        script: |
-          app-store-connect fetch-signing-files "$BUNDLE_ID" \
-            --type IOS_APP_STORE \
-            --create
-
-      - name: Add signing certificate
-        script: |
-          keychain add-certificates
-
       - name: Set up code signing
         script: |
-          xcode-project use-profiles --project "$CM_BUILD_DIR/$XCODE_PROJECT"
+          xcode-project use-profiles
 
       - name: Build IPA
         script: |
-          xcode-project build-ipa \
-            --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME"
+          set -o pipefail
+          xcode-project build-ipa             --project "MercanteInfernale.xcodeproj"             --scheme "MercanteInfernale"
 
     artifacts:
       - build/ios/ipa/*.ipa
-      - /tmp/xcodebuild_logs/*.log
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
 
     publishing:
       app_store_connect:
-        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
-        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
-        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+        auth: integration
+        submit_to_testflight: true
+        submit_to_app_store: false
